@@ -1,0 +1,158 @@
+/* HEADER */
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Rancho&display=swap');
+#header {
+	width: 100%;
+	height: 150px;
+	display: flex;
+	align-items: center;
+		.header-wrapper {
+			width: 90%;
+			height: 100%;
+			margin: 0 auto;
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			.header-logo {
+				display: flex;
+				flex-direction: column;
+				.header-img {
+					display: flex;
+					align-items: center;
+					img {
+						margin: 0 auto;
+						width: 80px;
+						transform: rotate(-20deg);
+					}
+				}
+
+				.header-logo-text span {
+					font-weight: 600;
+					font-size: 24px;
+					font-family: 'Rancho', cursive;
+				}
+			}
+
+			.header-title {
+				width: 40%;
+				margin: 0 auto;
+				.header-title-text h2 {
+					font-family: 'Lobster', cursive;
+					font-size: 30px;
+					text-shadow: 1px 1px 1px #fff;
+				}
+			}
+		}
+}
+
+/* HEADER RESPONSIVE */
+
+@media screen and (max-width: 1530px) {
+	#header {
+		.header-wrapper {
+			.header-title {
+				width: 60%;
+				.header-title-text {
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	#header {
+		.header-wrapper {
+			.header-title {
+				width: 70%;
+				.header-title-text {
+					width: 70%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	#header {
+		.header-wrapper {
+			width: 95%;
+			.header-title {
+				width: 80%;
+				.header-title-text {
+					width: 70%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 770px) {
+	#header {
+		.header-wrapper {
+			width: 95%;
+			.header-title {
+				width: 80%;
+				.header-title-text {
+					width: 90%;
+					margin: 0 auto;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 740px) {
+	#header {
+		.header-wrapper {
+			width: 95%;
+			.header-title {
+				width: 80%;
+				.header-title-text {
+					width: 60%;
+					font-size: 26px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 430px) {
+	#header {
+		.header-wrapper {
+			.header-logo {
+				.header-logo-text {
+					text-align: center;
+				}
+			}
+			.header-title {
+				width: 80%;
+				.header-title-text {
+					width: 60%;
+					h2 {
+						font-size: 25px;
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 325px) {
+	#header {
+		.header-wrapper {
+			width: 95%;
+			.header-title {
+				width: 80%;
+				.header-title-text {
+					width: 60%;
+					h2 {
+						font-size: 25px;
+					}
+				}
+			}
+		}
+	}
+}

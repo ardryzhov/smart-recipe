@@ -1,0 +1,39 @@
+body {
+	height: 100vh;
+	width: 100vw;
+}
+.content-wrapper {
+	width: 1500px;
+	margin: 0 auto;
+	background-color: #ccc;
+	border-left: 2px solid rgba(0, 0, 0, .5);
+	border-right: 2px solid rgba(0, 0, 0, .5);
+}
+
+/* RESPONSIVE */
+
+@media screen and (max-width: 1530px) {
+	.content-wrapper {
+		width: 1350px;
+	}
+}
+
+@media screen and (max-width: 1350px) {
+	.content-wrapper {
+		width: 100%;
+	}
+}
+
+@media screen and (max-width: 1025px) {
+	.content-wrapper {
+		width: 95%;
+	}
+}
+
+@media screen and (max-width: 770px) {
+	.content-wrapper {
+		width: 100%;
+		border: none;
+	}
+}
+
