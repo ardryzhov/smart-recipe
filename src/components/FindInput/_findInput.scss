@@ -41,3 +41,18 @@
 		}
 	}
 }
+
+.tag-wrap {
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	display: inline-flex;
+	align-items: center;
+	background-color: #fff;
+	span {
+		padding-right: 5px;
+	}
+	.tag-icon {
+		cursor: pointer;
+	}
+}

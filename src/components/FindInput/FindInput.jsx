@@ -1,33 +1,68 @@
-import React, { useRef } from 'react';
-import Tag from '../Tag/Tag';
+import React, { useEffect, useRef } from 'react';
 
 import './_findInput.scss';
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 const FindInput = ({tagInput, setTagInput}) => {
 	const inputRef = useRef();
 
 	const tags = tagInput.map((tag, i) => {
 		return (
-			<Tag 
-			tag={tag}
-			setTagInput={setTagInput}
-			tagInput={tagInput}/>
+			<div className="tag-wrap" key={i}>
+				<span>{tag.title}</span>
+				<FontAwesomeIcon icon={faTimes} className='tag-icon' onClick={(e) => removeInputTag(e)}/>
+			</div>
 		)
 	})
 
+	function removeInputTag(e) {
+		const title = e.target.closest('.tag-wrap').firstChild.textContent;
+		const deleteTag = tagInput.filter(item => {
+			if (item.title !== title) {
+				return item;
+			}
+		})
+		setTagInput([...deleteTag]);
+	}
+
+	function validateWord(word) {
+		const regex = /^([а-яА-ЯёЁ]+)$/i;
+		return regex.test(word);
+	}
+
+	function checkTag(value) {
+		if (tagInput.length === 0) {
+			return value;
+		}
+
+		const valArray = value.toLowerCase().split('')
+		const val = valArray.slice(0, 1).join('').toUpperCase() + valArray.slice(1, valArray.length).join('');
+
+		const filt = tagInput.every(item => {
+			return item.title !== val;
+		});
+		return filt;
+	}
+
 	function addToTagEnter(event) {
 		const tags = [...tagInput];
-		const currentTag = event.target.value;
-		console.log(tagInput)
+		const val = event.target.value;
 		if (event.code === 'Enter') {
-			setTagInput([
-				...tags,
-				{title: currentTag}
-			]);
-			event.target.value = '';
+			if (validateWord(val) && checkTag(val)) {
+				const valArray = val.toLowerCase().split('')
+				const currentTag = valArray.slice(0, 1).join('').toUpperCase() + valArray.slice(1, valArray.length).join('');
+				setTagInput([
+					...tags,
+					{title: currentTag}
+				]);
+				event.target.value = '';
+			} else {
+				console.log(checkTag(val))
+				return console.log('Можно вводить только русские буквы.')
+			}
 		}
 	}
 
@@ -52,7 +87,7 @@ const FindInput = ({tagInput, setTagInput}) => {
 				<input 
 				ref={inputRef}
 				type="text"
-				onKeyDown={(e) => addToTagEnter(e)}/>
+				onKeyDown={(e) => addToTagEnter(e)} placeholder='Например: Молоко, Хлеб и т.д.'/>
 				<FontAwesomeIcon 
 				onClick={addToTagIcon}
 				icon={faSearch} 
