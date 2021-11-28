@@ -60,8 +60,8 @@ const FindInput = ({tagInput, setTagInput}) => {
 				]);
 				event.target.value = '';
 			} else {
-				console.log(checkTag(val))
-				return console.log('Можно вводить только русские буквы.')
+				event.target.value = '';
+				return createTooltip()
 			}
 		}
 	}
@@ -75,6 +75,14 @@ const FindInput = ({tagInput, setTagInput}) => {
 			{title: currentTag}
 		]);
 		inputRef.current.value = '';
+	}
+
+	function createTooltip() {
+		const tooltip = inputRef.current.closest('.input-field').lastChild;
+		tooltip.classList.remove('tooltip-hidden')
+		setTimeout(() => {
+			tooltip.classList.add('tooltip-hidden')
+		}, 3500)
 	}
 
 	return (
@@ -92,6 +100,9 @@ const FindInput = ({tagInput, setTagInput}) => {
 				onClick={addToTagIcon}
 				icon={faSearch} 
 				className='input-search-icon'/>
+				<div className="tooltip-tag tooltip-">
+					<span>Можно вводить только русские буквы и нельзя указывать уже введённые продукты.</span>
+				</div>
 			</div>
 
 			<div className="input-tags-field">
@@ -107,3 +118,5 @@ const FindInput = ({tagInput, setTagInput}) => {
 };
 
 export default FindInput;
+
+// Добавить отображение всплывающего окна, если введены цифры/англ буквы или такой тег уже есть.
