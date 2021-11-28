@@ -1,11 +1,16 @@
 import React, { useRef } from 'react';
 import product from '../../data-product.js'
+import ProductModal from '../ProductModal/ProductModal.jsx';
 
 import './_offer.scss';
 
 const Offer = ({tagInput}) => {
 
 	const titleComplitedRef = useRef();
+
+	function openProductModal() {
+		return <ProductModal/>
+	}
 
 	const products = product.map((item, i) => {
 		const tagsProduct = item.tags,
@@ -26,7 +31,8 @@ const Offer = ({tagInput}) => {
 								<h3>{item.name}</h3>
 							</div>
 							<div className="empty-product-img">
-
+								<img src={item.img} alt={item.name} />
+								{console.log(item.img)}
 							</div>
 
 							<div className="empty-product-tags">
@@ -34,7 +40,7 @@ const Offer = ({tagInput}) => {
 							</div>
 
 							<div className="empty-product-button">
-								<button onClick={(e) => console.log(e.target)}>Смотреть рецепт</button>
+								<button onClick={openProductModal}>Смотреть рецепт</button>
 							</div>
 						</div>
 		)
