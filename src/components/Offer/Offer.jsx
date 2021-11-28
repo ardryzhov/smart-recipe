@@ -34,7 +34,7 @@ const Offer = ({tagInput}) => {
 							</div>
 
 							<div className="empty-product-button">
-								<button>Смотреть рецепт</button>
+								<button onClick={(e) => console.log(e.target)}>Смотреть рецепт</button>
 							</div>
 						</div>
 		)

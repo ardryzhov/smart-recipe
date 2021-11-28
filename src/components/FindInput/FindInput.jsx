@@ -29,7 +29,7 @@ const FindInput = ({tagInput, setTagInput}) => {
 	}
 
 	function validateWord(word) {
-		const regex = /^([а-яА-ЯёЁ]+)$/i;
+		const regex = /^([А-Яа-яЁё ]+)$/i;
 		return regex.test(word);
 	}
 
@@ -124,4 +124,4 @@ const FindInput = ({tagInput, setTagInput}) => {
 
 export default FindInput;
 
-// Добавить отображение всплывающего окна, если введены цифры/англ буквы или такой тег уже есть.
+// Добавить отображение всплывающего окна, если введены цифры/англ буквы или такой тег уже есть. добавить в валидатор пробелы
