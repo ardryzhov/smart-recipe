@@ -2,7 +2,8 @@ import './_reset.scss';
 import './App.scss';
 import Header from './components/Header';
 import About from './components/About';
-import FindInput from './components/FindInput/FindInput';
+import FindInput from './components/FindInput';
+import Offer from './components/Offer'
 import { useState } from 'react';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
 				<FindInput
 				tagInput={tagInput}
 				setTagInput={setTagInput}/>
+				<Offer tagInput={tagInput}/>
 			</main>
 		</div>
 	);

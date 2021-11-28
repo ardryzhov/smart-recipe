@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useRef } from 'react';
 
 import './_findInput.scss';
 
@@ -85,8 +85,12 @@ const FindInput = ({tagInput, setTagInput}) => {
 		}, 3500)
 	}
 
+	function resetTags() {
+		setTagInput([]);
+	}
+
 	return (
-		<div className="input-wrap">
+		<div className="input-wrapper">
 			<div className="input-title">
 				<h3>Введите название продуктов которые у Вас есть.</h3>
 			</div>
@@ -100,7 +104,7 @@ const FindInput = ({tagInput, setTagInput}) => {
 				onClick={addToTagIcon}
 				icon={faSearch} 
 				className='input-search-icon'/>
-				<div className="tooltip-tag tooltip-">
+				<div className="tooltip-tag tooltip-hidden">
 					<span>Можно вводить только русские буквы и нельзя указывать уже введённые продукты.</span>
 				</div>
 			</div>
@@ -108,6 +112,7 @@ const FindInput = ({tagInput, setTagInput}) => {
 			<div className="input-tags-field">
 				<div className="input-tag">
 					<div className='input-tag-title'>Ключевые слова:</div>
+					<div className="input-tag-reset" onClick={resetTags}><button>Удалить все теги</button></div>
 					<div className="input-tag-wrap">
 						{tags}
 					</div>

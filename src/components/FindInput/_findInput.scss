@@ -1,4 +1,4 @@
-.input-wrap {
+.input-wrapper {
 	margin-top: 25px;
 	.input-title {
 		h3 {
@@ -69,12 +69,28 @@
 	.input-tags-field {
 		width: 90%;
 		margin: 10px auto;
-		height: 100%;
+		min-height: 90px;
 		.input-tag {
 			.input-tag-title {
 				font-size: 20px;
 				font-weight: 600;
 			}
+		}
+		.input-tag-reset button {
+			color: #ccc;
+			font-style: italic;
+			background-color: rgb(87, 87, 87);
+			width: 180px;
+			margin: 5px 0;
+			outline: none;
+			transition: .09s linear;
+			border: none;
+			border-radius: 10px;
+			box-shadow: 3px 2px 2px #000;
+			cursor: pointer;
+		}
+		.input-tag-reset button:active {
+			box-shadow: -2px -1px 2px #000;
 		}
 	}
 }
@@ -95,7 +111,7 @@
 }
 
 @media screen and (max-width: 1025px) {
-	.input-wrap {
+	.input-wrapper {
 		.input-field {
 			.tooltip-tag {
 				top: -10px;
@@ -113,7 +129,7 @@
 }
 
 @media screen and (max-width: 770px) {
-	.input-wrap {
+	.input-wrapper {
 		.input-field {
 			.tooltip-tag {
 				top: 70px;
@@ -136,7 +152,7 @@
 }
 
 @media screen and (max-width: 430px) {
-	.input-wrap {
+	.input-wrapper {
 		.input-field {
 			.tooltip-tag {
 				top: -73px;
@@ -159,7 +175,7 @@
 }
 
 @media screen and (max-width: 380px) {
-	.input-wrap {
+	.input-wrapper {
 		.input-field {
 			.tooltip-tag {
 				top: -73px;
@@ -172,7 +188,7 @@
 }
 
 @media screen and (max-width: 325px) {
-	.input-wrap {
+	.input-wrapper {
 		.input-field {
 			.tooltip-tag {
 				top: -73px;
