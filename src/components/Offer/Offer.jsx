@@ -4,18 +4,22 @@ import ProductModal from '../ProductModal/ProductModal.jsx';
 
 import './_offer.scss';
 
-const Offer = ({tagInput}) => {
+const Offer = ({setIsVisible, tagInput}) => {
 
 	const titleComplitedRef = useRef();
 
-	function openProductModal() {
-		return <ProductModal/>
+	function openProductModal(e, i) {
+		const event = e.target.closest('.offer-empty-product');
+		const modal = event.dataset.productid;
+		if (+modal === i) {
+			setIsVisible(true)
+			event.children[4].classList.remove('hide-modal');
+			document.body.style.overflow = 'hidden';
+		}
 	}
 
 	const products = product.map((item, i) => {
-		const tagsProduct = item.tags,
-				recipeProduct = item.recipe,
-				stepsProduct = item.steps;
+		const tagsProduct = item.tags;
 
 		const createTag = tagsProduct.map((item, i) => {
 			return (
@@ -26,13 +30,12 @@ const Offer = ({tagInput}) => {
 		})
 		
 		return (
-			<div className="offer-empty-product" key={i}>
+			<div data-productid={i} className="offer-empty-product" key={i}>
 							<div className="empty-product-title">
 								<h3>{item.name}</h3>
 							</div>
 							<div className="empty-product-img">
 								<img src={item.img} alt={item.name} />
-								{console.log(item.img)}
 							</div>
 
 							<div className="empty-product-tags">
@@ -40,27 +43,34 @@ const Offer = ({tagInput}) => {
 							</div>
 
 							<div className="empty-product-button">
-								<button onClick={openProductModal}>Смотреть рецепт</button>
+								<button onClick={(e) => openProductModal(e, i)}>Смотреть рецепт</button>
 							</div>
+							<ProductModal 
+							setIsVisible={setIsVisible}
+							item={item}
+							i={i}/>
 						</div>
 		)
 	})
 
-
+// Убрать вызов ProductModal из map'а. Каждому дать свой ПродуктМодал и вызывать по e.target
 	return (
 		<div className="offer-wrapper">
 			{tagInput.length === 0
 			? 
-			(<div className="offer-empty-wrap">
-				<div className="offer-empty-title">
-					<h3>Наши рецепты:</h3>
-				</div>
+			(<>
+			<div className="offer-empty-wrap">
+					<div className="offer-empty-title">
+						<h3>Наши рецепты:</h3>
+					</div>
 				<div className="offer-empty-content">
 
 						{products}
 
 				</div>
-			</div>)
+			</div>
+			</>
+			)
 			:
 			(<div className="offer-complited-wrap">
 				<div className="offer-complited-title">

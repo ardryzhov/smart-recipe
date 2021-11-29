@@ -4,10 +4,21 @@ import Header from './components/Header';
 import About from './components/About';
 import FindInput from './components/FindInput';
 import Offer from './components/Offer'
-import { useState } from 'react';
+import ProductModal from './components/ProductModal'
+import { useState, useEffect } from 'react';
 
 function App() {
 	const [tagInput, setTagInput] = useState([]);
+	const [isVisible, setIsVisible] = useState(false);
+
+	useEffect(() => {
+		window.addEventListener('keydown', (e) => {
+			if (e.code === 'Escape' && isVisible === false) {
+				
+				setIsVisible(false)
+			}
+		})
+	})
 
 	return (
 		<div className="content-wrapper">
@@ -17,7 +28,10 @@ function App() {
 				<FindInput
 				tagInput={tagInput}
 				setTagInput={setTagInput}/>
-				<Offer tagInput={tagInput}/>
+				<Offer 
+				isVisible={isVisible}
+				setIsVisible={setIsVisible}
+				tagInput={tagInput}/>
 			</main>
 		</div>
 	);

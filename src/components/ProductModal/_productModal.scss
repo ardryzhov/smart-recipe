@@ -4,4 +4,130 @@
 	height: 100%;
 	top: 0;
 	left: 0;
+	opacity: 1;
+	background-color: rgba(255, 255, 255, .5);
+	backdrop-filter: blur(2px);
+	visibility: visible;
+	pointer-events: all;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	z-index: 100;
+	&.hide-modal {
+		opacity: 0;
+		visibility: none;
+		pointer-events: none;
+		cursor: pointer;
+	}
+	.product-modal {
+		width: 400px;
+		height: 600px;
+		border: 1px solid #000;
+		border-radius: 10px;
+		background-color: #fff;
+		.product-modal-title {
+			display: flex;
+			justify-content: space-around;
+			align-items: center;
+			background-color: rgb(44, 44, 44);
+			padding: 10px 0px;
+			color: #fff;
+			border-radius: 7px 7px 0 0 ;
+			h3 {
+				font-size: 22px;
+				text-align: center;
+				font-weight: 600;
+			}
+			svg {
+				margin-right: 10px;
+				color: red;
+				cursor: pointer;
+			}
+		}
+		.product-modal-short-recipe {
+			.short-recipe {
+				width: 100%;
+				padding: 10px 0;
+				background-color: #ccc;
+				h4 {
+					text-align: center;
+					font-size: 18px;
+					text-decoration: underline;
+					font-style: italic;
+				}
+			}
+			.short-descriptions {
+				background-color: #000;
+				padding: 5px 0;
+				.recipe-descr {
+					color: #fff;
+					width: 70%;
+					margin: 0 auto;
+					margin-bottom: 5px;
+					display: flex;
+					justify-content: space-between;
+					.recipe-descr-value {
+						font-style: italic;
+					}
+				}
+			}
+			
+		}
+		.product-modal-steps {
+			margin: 10px 15px;
+			.modal-steps-title h4 {
+				font-size: 20px;
+				text-align: center;
+				font-weight: 600;
+				margin-bottom: 10px;
+			}
+			.modal-steps-wrap {
+				width: 100%;
+				height: 300px;
+				overflow-y: auto;
+				.modal-step-item {
+					border-bottom: 1px solid #000;
+					.step-item-title {
+						padding: 5px 0;
+						text-align: center;
+						font-weight: 600;
+						font-size: 18px;
+					}
+					.step-item-descr {
+						margin: 5px 0;
+						span {
+							font-style: italic;
+							line-height: 25px;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (max-width: 380px) {
+	.product-modal-wrapper {
+		.product-modal {
+			width: 90%;
+			.product-modal-steps {
+				.modal-steps-wrap {
+					height: 270px;
+				}
+			}
+		}
+	}
+}
+@media screen and (max-width: 330px) {
+	.product-modal-wrapper {
+		.product-modal {
+			width: 95%;
+			.product-modal-steps {
+				.modal-steps-wrap {
+					height: 255px;
+				}
+			}
+		}
+	}
 }
