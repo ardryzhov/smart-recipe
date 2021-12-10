@@ -4,7 +4,6 @@ import Header from './components/Header';
 import About from './components/About';
 import FindInput from './components/FindInput';
 import Offer from './components/Offer'
-import ProductModal from './components/ProductModal'
 import { useState, useEffect } from 'react';
 
 function App() {

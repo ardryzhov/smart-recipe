@@ -41,7 +41,6 @@ const ProductModal = ({setIsVisible ,item, i}) => {
 		const event = e.target.closest('.offer-empty-product');
 		const modal = event.dataset.productid;
 		if (+modal === i) {
-			console.log(e.target.matches('.product-modal-wrapper'))
 			setIsVisible(false)
 			event.children[4].classList.add('hide-modal');
 			document.body.style.overflow = '';
@@ -55,7 +54,6 @@ const ProductModal = ({setIsVisible ,item, i}) => {
 		}
 	}
 
-	// Привязать hide-modal к setIsVisible и убирать его по нажатию Esc в App.js через window
 
 	return (
 		<div className='product-modal-wrapper hide-modal' onClick={(e)=> modalWrapperCloseModal(e)} >
