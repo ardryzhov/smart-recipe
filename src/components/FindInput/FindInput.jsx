@@ -23,6 +23,8 @@ const FindInput = ({tagInput, setTagInput}) => {
 		const deleteTag = tagInput.filter(item => {
 			if (item.title !== title) {
 				return item;
+			} else {
+				return false;
 			}
 		})
 		setTagInput([...deleteTag]);

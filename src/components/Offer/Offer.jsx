@@ -63,7 +63,7 @@ const Offer = ({setIsVisible, tagInput}) => {
 
 	const tagsArrInput = []
 
-	const tagVal = tagInput.map(el => {	
+	tagInput.map(el => {	
 		return tagsArrInput.push(String(Object.values(el)));
 	})
 
@@ -115,6 +115,8 @@ const Offer = ({setIsVisible, tagInput}) => {
 							i={i}/>
 						</div>
 					)
+			} else {
+				return false;
 			}
 		})
 
@@ -123,17 +125,18 @@ const Offer = ({setIsVisible, tagInput}) => {
 
 	const almostRightRes = []
 
-	const i = tagsProduct.filter(item => {
-		let leng = tagsArrInput.length <= 1 ? 1 : tagsArrInput.length;
+	tagsProduct.filter(item => {
+		let lang = tagsArrInput.length <= 1 ? 1 : tagsArrInput.length;
 
-		let frst = tagsArrInput.slice(0, Math.floor(leng/2));
-		let scnd = tagsArrInput.slice(Math.floor(leng/2), leng);
+		let frst = tagsArrInput.slice(0, Math.floor(lang/2));
+		let scnd = tagsArrInput.slice(Math.floor(lang/2), lang);
 
-		if (almostRightRes.includes(item) && tagsArrInput.length <= 1) return; 
+		if (almostRightRes.includes(item) && tagsArrInput.length <= 1) return false; 
 
 		if ((frst.every(el=>item.includes(el)) && scnd.some(el=>item.includes(el))) || (frst.some(el=>item.includes(el)) && scnd.every(el=>item.includes(el)))) {
 			almostRightRes.push(item)
 		}
+		return item;
 	})	
 
 
@@ -174,6 +177,8 @@ const Offer = ({setIsVisible, tagInput}) => {
 							i={i}/>
 						</div>
 				)
+			} else {
+				return false;
 			}
 		}) 
 
