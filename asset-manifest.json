@@ -1,0 +1,22 @@
+{
+  "files": {
+    "main.css": "/smart-recipe/static/css/main.6f98abf0.css",
+    "main.js": "/smart-recipe/static/js/main.0033b16d.js",
+    "static/js/787.4f62aa62.chunk.js": "/smart-recipe/static/js/787.4f62aa62.chunk.js",
+    "static/media/recipe.png": "/smart-recipe/static/media/recipe.fc594269e1b7a0d85294.png",
+    "static/media/salat-ezhik.jpg": "/smart-recipe/static/media/salat-ezhik.8a709324e20cd4fbc29d.jpg",
+    "static/media/makarony.jpg": "/smart-recipe/static/media/makarony.91743de7474708fd4e30.jpg",
+    "static/media/donut.jpg": "/smart-recipe/static/media/donut.1aa6a808a944cd2a2f4d.jpg",
+    "static/media/plov.jpg": "/smart-recipe/static/media/plov.b894e7396fde6078e815.jpg",
+    "static/media/hot-buterbrod.jpg": "/smart-recipe/static/media/hot-buterbrod.0ec2a2a8fe29f2ca0ea0.jpg",
+    "static/media/xachapyri.jpg": "/smart-recipe/static/media/xachapyri.cfea5ed760d51bf68794.jpg",
+    "index.html": "/smart-recipe/index.html",
+    "main.6f98abf0.css.map": "/smart-recipe/static/css/main.6f98abf0.css.map",
+    "main.0033b16d.js.map": "/smart-recipe/static/js/main.0033b16d.js.map",
+    "787.4f62aa62.chunk.js.map": "/smart-recipe/static/js/787.4f62aa62.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.6f98abf0.css",
+    "static/js/main.0033b16d.js"
+  ]
+}
