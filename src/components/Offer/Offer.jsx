@@ -210,11 +210,12 @@ const Offer = ({setIsVisible, tagInput}) => {
 					</div>
 					<div className="offer-selected-content">
 						{selectedProducts.length === 0 ? (
-								<Loader
-								type="TailSpin"
-								color="#FFFFFF"
-								height={400}
-								width={320}/>
+								// <Loader
+								// type="TailSpin"
+								// color="#FFFFFF"
+								// height={400}
+								// width={320}/>
+								<h2> К сожаление, мы пока ничего не подобрали для Вас, введите ещё какие нибудь ингридиенты</h2>
 							
 						) : 
 							<>

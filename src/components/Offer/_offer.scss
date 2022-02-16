@@ -94,6 +94,14 @@
 		display: flex;
 		justify-content: center;
 		flex-wrap: wrap;
+
+		h2 {
+			font-size: 24px;
+			font-style: italic;
+			margin: 10px 0px;
+			text-align: center;
+		}
+
 		.offer-empty-product {
 			margin: 15px ;
 			border: 1px solid #000;
